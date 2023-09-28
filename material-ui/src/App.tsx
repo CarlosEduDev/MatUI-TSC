@@ -1,8 +1,10 @@
 import { BrowserRouter } from "react-router-dom"
 import {AppThemeProvider} from './shared/contexts/ThemeContext'
+import { DrawerProvider } from "./shared/contexts/DrawerContext"
 
 // Routes
 import {AppRoutes} from './routes'
+import { MenuLateral } from "./shared/components"
 
 
 function App() {
@@ -10,10 +12,18 @@ function App() {
   
   return (
     <AppThemeProvider>
+      <DrawerProvider>
       <BrowserRouter>
-    <AppRoutes/>
-    </BrowserRouter>
-    </AppThemeProvider>
+
+      <MenuLateral>
+      <AppRoutes/>
+      </MenuLateral>
+
+      </BrowserRouter>
+      </DrawerProvider>
+      </AppThemeProvider>
+      
+
     
     
   )

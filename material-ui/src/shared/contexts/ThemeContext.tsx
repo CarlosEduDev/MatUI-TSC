@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material'
 import Box from '@mui/material/Box'
 import { DarkTheme, LightTheme } from '../themes';
 
+
 interface IThemeContextData {
    themeName: 'light' | 'dark';
    toggleTheme : () => void;
