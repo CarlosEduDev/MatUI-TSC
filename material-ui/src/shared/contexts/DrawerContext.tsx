@@ -2,8 +2,8 @@ import { createContext, useState, useCallback, useContext } from 'react';
 
 interface IDrawerContextData {
   isDrawerOpen: boolean;
-  drawerOptions: IDrawerOption[];
   toggleDrawerOpen: () => void;
+  drawerOptions: IDrawerOption[];
   setDrawerOptions: (newDrawerOptions: IDrawerOption[]) => void;
 }
 
@@ -13,7 +13,6 @@ interface IAppThemeProviderProps {
 
 interface IDrawerOption {
   icon: string;
-  to?: any;
   label: string;
   path: string
 }
