@@ -14,6 +14,11 @@ export const AppRoutes = () => {
             label: 'Página inicial',
             path: "/pagina-inicial"
          },
+         {
+            icon: 'star',
+            label: "Cidades",
+            path: "/cidades"
+         }
       ])
    }, []);
    
@@ -22,6 +27,8 @@ export const AppRoutes = () => {
          <Route path='/pagina-inicial' element={<DashBoard/>}  />
 
          <Route path='*' element={ <Navigate to='/pagina-inicial'/> } />
+
+         <Route path='/cidades' element={<DashBoard/>}/>
       </Routes>
    )
 }
