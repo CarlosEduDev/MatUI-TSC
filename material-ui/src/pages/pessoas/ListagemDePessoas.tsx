@@ -4,24 +4,30 @@ import { FerramentasDeListagem } from "../../shared/components"
 import { LayoutBaseDePagina } from "../../shared/layouts"
 import { useEffect, useMemo } from "react"
 import { PessoasService } from "../../shared/services/api/pessoas/PessoasServices"
+import {useDebounce} from '../../shared/hooks'
 
 
 export const ListagemDePessoas: React.FC = () => {
    const [searchParams, setSearchParams] = useSearchParams()
+
+   const { debouce } = useDebounce(3000, false);
 
    const busca = useMemo(() => {
       return searchParams.get('busca') || ''
    }, [searchParams]);
 
    useEffect(() => {
-      PessoasService.getAll(1, busca)
-      .then((result) => {
-         if(result instanceof Error){
-            alert(result.message);
-            return;
-         }else{
-            console.log(result)
-         }
+
+      debouce(() =>{
+         PessoasService.getAll(1, busca)
+         .then((result) => {
+            if(result instanceof Error){
+               alert(result.message);
+               return;
+            }else{
+               console.log(result)
+            }
+      })
       });
    },[busca]);
 
