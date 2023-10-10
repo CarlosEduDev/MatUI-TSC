@@ -1,6 +1,8 @@
 
 import { Box, Button, Icon, InputAdornment, Paper, TextField, useTheme } from "@mui/material";
 
+import { Enviroment } from "../../environment";
+
 interface IFerramentasDeListagemProps{
    textoDaBusca?: string;
    mostrarInputBusca?: boolean;
@@ -40,7 +42,7 @@ export const FerramentasDeListagem: React.FC<IFerramentasDeListagemProps> = (
             size='small'
             value={textoDaBusca}
             onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
-            placeholder="Pesquisar..."
+            placeholder={Enviroment.INPUT_DE_BUSCA}
             InputProps={{
                startAdornment: (
                   <InputAdornment position="start">
