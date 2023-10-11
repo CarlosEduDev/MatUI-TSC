@@ -1,22 +1,45 @@
-import {useCallback, useRef} from 'react'
+import { useCallback, useRef } from 'react';
 
-export const useDebounce = (delay = 300, notDelayFirtTime = true) => {
-const debouncing = useRef<NodeJS.Timeout>();
-const isFirstTime = useRef(notDelayFirtTime);
 
-   const debouce = useCallback((func: () => void) => {
+export const useDebounce = (delay = 300, notDelayInFirstTime = true) => {
+  const isFirstTime = useRef(notDelayInFirstTime);
+  const debouncing = useRef<NodeJS.Timeout>();
 
-      if(isFirstTime.current){
-         isFirstTime.current = false;
-         func();
 
-      }else{
-         if(debouncing.current){
-            clearTimeout(debouncing.current);
-         }
-         debouncing.current = setTimeout(() => func(), delay);
+  const debounce = useCallback((func: () => void) => {
+    if (isFirstTime.current) {
+      isFirstTime.current = false;
+      func();
+    } else {
+      if (debouncing.current) {
+        clearTimeout(debouncing.current);
       }
-   }, [delay]);
+      debouncing.current = setTimeout(() => func(), delay);
+    }
+  }, [delay]);
 
-   return{debouce};
+  return { debounce };
 };
+
+// import {useCallback, useRef} from 'react'
+
+// export const useDebounce = (delay = 300, notDelayFirtTime = true) => {
+// const debouncing = useRef<NodeJS.Timeout>();
+// const isFirstTime = useRef(notDelayFirtTime);
+
+//    const debounce = useCallback((func: () => void) => {
+
+//       if(isFirstTime.current){
+//          isFirstTime.current = false;
+//          func();
+
+//       }else{
+//          if(debouncing.current){
+//             clearTimeout(debouncing.current);
+//          }
+//          debouncing.current = setTimeout(() => func(), delay);
+//       }
+//    }, [delay]);
+
+//    return{debounce};
+// };
