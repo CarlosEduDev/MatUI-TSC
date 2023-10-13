@@ -1,7 +1,11 @@
 import {Routes, Route, Navigate} from 'react-router-dom'
 import { useDrawerContext  } from '../shared/contexts/'
 import {useEffect,} from 'react'
-import { DashBoard, ListagemDePessoas } from '../pages'
+import { 
+   DashBoard, 
+   ListagemDePessoas,
+   DetalheDePessoa
+ } from '../pages'
 
 export const AppRoutes = () => {
 
@@ -27,7 +31,7 @@ export const AppRoutes = () => {
          <Route path='/pagina-inicial' element={<DashBoard/>}  />
 
          <Route path='/pessoas' element={<ListagemDePessoas/>}/>
-         <Route path='/pessoas/detalhe/:id' element={<p>Detalhe</p>}/>
+         <Route path='/pessoas/detalhe/:id' element={<DetalheDePessoa/>}/>
 
          <Route path='*' element={ <Navigate to='/pagina-inicial'/> } />
       </Routes>

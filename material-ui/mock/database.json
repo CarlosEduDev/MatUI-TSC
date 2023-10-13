@@ -1,34 +1,16 @@
 {
   "pessoas": [
     {
-      "id": 4,
-      "email": "João@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "João Santos"
-    },
-    {
       "id": 7,
       "email": "Vannis@gmail.com",
       "cidadeId": "1",
       "nomeCompleto": "Vannis Santos"
     },
     {
-      "id": 8,
-      "email": "Nally@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Nally Santos"
-    },
-    {
       "id": 9,
       "email": "Lucas@gmail.com",
       "cidadeId": "1",
       "nomeCompleto": "Lucas Santos"
-    },
-    {
-      "id": 10,
-      "email": "Paula@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Paula Santos"
     },
     {
       "id": 11,
@@ -83,12 +65,6 @@
       "email": "Gabriel@gmail.com",
       "cidadeId": "1",
       "nomeCompleto": "Gabriel Silva"
-    },
-    {
-      "id": 20,
-      "email": "Aurelion@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Aurelion Silva"
     }
   ]
 }

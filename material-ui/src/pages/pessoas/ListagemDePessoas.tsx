@@ -58,7 +58,7 @@ export const ListagemDePessoas: React.FC = () => {
       .then(result => {
         if(result instanceof Error){
           alert(result.message)
-        } else {
+        } else{
           setRows(oldRows => [
             ...oldRows.filter(oldRow => oldRow.id !== id)
           ])
@@ -66,6 +66,7 @@ export const ListagemDePessoas: React.FC = () => {
         }
       })
     }
+
   }
 
 
@@ -78,6 +79,7 @@ export const ListagemDePessoas: React.FC = () => {
           mostrarInputBusca
           textoDaBusca={busca}
           textoBotaoNovo='Nova'
+          aoClicarEmNovo={() => navigate('/pessoas/detalhe/nova')}
           aoMudarTextoDeBusca={texto => setSearchParams({ busca: texto, pagina: '1' }, { replace: true })}
         />
       }
