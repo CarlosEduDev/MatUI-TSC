@@ -51,24 +51,23 @@ export const ListagemDePessoas: React.FC = () => {
     });
   }, [busca, pagina]);
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: number) =>{
 
     if(confirm('Você deseja deletar?')){
       PessoasService.deleteById(id)
       .then(result => {
         if(result instanceof Error){
           alert(result.message)
-        } else{
+        }else{
           setRows(oldRows => [
             ...oldRows.filter(oldRow => oldRow.id !== id)
           ])
-          alert('Registro deletado com sucesso!')
         }
+        alert('Registro deletado com sucesso!')
       })
     }
-
   }
-
+  
 
 
   return (

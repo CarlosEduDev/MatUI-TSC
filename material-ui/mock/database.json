@@ -1,12 +1,6 @@
 {
   "pessoas": [
     {
-      "id": 7,
-      "email": "Vannis@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Vannis Santos"
-    },
-    {
       "id": 9,
       "email": "Lucas@gmail.com",
       "cidadeId": "1",
@@ -29,18 +23,6 @@
       "email": "Roberto@gmail.com",
       "cidadeId": "1",
       "nomeCompleto": "Roberto Santos"
-    },
-    {
-      "id": 14,
-      "email": "Manu@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Manu Santos"
-    },
-    {
-      "id": 15,
-      "email": "Daniele@gmail.com",
-      "cidadeId": "1",
-      "nomeCompleto": "Daniele Santos"
     },
     {
       "id": 16,
