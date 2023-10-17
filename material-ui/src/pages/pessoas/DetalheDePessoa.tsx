@@ -4,7 +4,6 @@ import { LayoutBaseDePagina } from "../../shared/layouts"
 import { FerramentasDeDetalhe } from "../../shared/components"
 import { useEffect, useState } from "react";
 import { PessoasService } from "../../shared/services/api/pessoas/PessoasServices";
-
 import { Form } from "@unform/web";
 import { VTextField } from "../../shared/forms";
 
@@ -76,10 +75,13 @@ export const DetalheDePessoa: React.FC = () =>{
         }
         >
 
-            <Form onSubmit={console.log}>
-                <VTextField name=""/>
+            <Form onSubmit={(dados) => console.log(dados)}>
+                <VTextField
+                 name="nomeCompleto"
+                 
+                 />
 
-            
+            <button type="submit">Submit</button>
             </Form>
            
 
