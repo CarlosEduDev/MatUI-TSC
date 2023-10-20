@@ -1,14 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import { LayoutBaseDePagina } from "../../shared/layouts"
 import { FerramentasDeDetalhe } from "../../shared/components"
 import { PessoasService } from "../../shared/services/api/pessoas/PessoasServices";
-import { VTextField } from "../../shared/forms";
+
+import { VTextField, VForm, useVForm } from "../../shared/forms";
 
 import { Box, Paper, Grid, Typography, LinearProgress } from "@mui/material";
-import { Form } from "@unform/web";
-import { FormHandles } from "@unform/core";
 
 interface IFormData {
     email: string,
@@ -20,7 +19,7 @@ export const DetalheDePessoa: React.FC = () =>{
     const { id = 'nova' } = useParams<'id'>();
     const navigate = useNavigate();
 
-    const formRef = useRef<FormHandles>(null);
+    const { formRef, save, saveAndClose, isSaveAndClose } = useVForm();
 
     const [isLoading, setIsLoading] = useState(false);
     const [nome, setNome] = useState('');
@@ -43,6 +42,12 @@ export const DetalheDePessoa: React.FC = () =>{
                     formRef.current?.setData(result)
                 }
             })
+        } else{
+            formRef.current?.setData({
+                nomeCompleto: '',
+                email: '',
+                cidadeId: '',
+            })
         }
 
     }, [id]);
@@ -63,21 +68,26 @@ export const DetalheDePessoa: React.FC = () =>{
     }
   }
     
-    const handleSave = (dados: IFormData) => {
+    const handleSave = (dados: IFormData) =>{
         setIsLoading(true)
-        
+
         if(id === 'nova'){
             PessoasService.create(dados)
-            .then((result) => {
+            .then((result) =>{
                 setIsLoading(false)
 
                 if(result instanceof Error){
                     alert(result.message)
-                } else{
-                    navigate(`/pessoas/detalhe/${result}`)
+                }else{
+                    if(isSaveAndClose()){
+                        navigate('/pessoas')
+                        
+                    } else{
+                        navigate(`/pessoas/detalhe/${result}`)
+                    }
                 }
             })
-        } else{
+        }else{
             PessoasService.updateById(Number(id), {id: Number(id), ...dados})
             .then((result) => {
                 setIsLoading(false)
@@ -85,9 +95,12 @@ export const DetalheDePessoa: React.FC = () =>{
                 if(result instanceof Error){
                     alert(result.message)
                 } else{
-                    navigate('/pessoas')
+                    if(isSaveAndClose()){
+                        navigate('/pessoas')
+                        
+                    } 
                 }
-            });
+            })
         }
     }
     
@@ -103,15 +116,15 @@ export const DetalheDePessoa: React.FC = () =>{
             mostrarBotaoSalvar
             mostrarBotaoApagar={id !== 'nova'}
 
-            aoClicarEmSalvar={() => formRef.current?.submitForm() }
-            aoClicarEmSalvarEFechar={() => formRef.current?.submitForm()}
+            aoClicarEmSalvar={save}
+            aoClicarEmSalvarEFechar={saveAndClose}
             aoClicarEmApagar={() => handleDelete(Number(id))}
             aoClicarEmNovo={() => navigate('/pessoas/detalhe/nova')}
             aoClicarEmVoltar={() => navigate('/pessoas')}
             />
         }
         >
-            <Form ref={formRef} onSubmit={(handleSave)}>
+            <VForm ref={formRef} onSubmit={(handleSave)}>
 
                 <Box margin={1} display='flex' flexDirection='column' component={Paper} variant="outlined">
 
@@ -169,7 +182,7 @@ export const DetalheDePessoa: React.FC = () =>{
 
                 </Box>
 
-            </Form>
+            </VForm>
         </LayoutBaseDePagina>
     )
 }
