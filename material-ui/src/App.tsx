@@ -2,6 +2,8 @@ import { BrowserRouter } from "react-router-dom"
 import {AppThemeProvider} from './shared/contexts/ThemeContext'
 import { DrawerProvider } from "./shared/contexts/DrawerContext"
 
+import './shared/forms/TraducoesYup'
+
 // Routes
 import {AppRoutes} from './routes'
 import { MenuLateral } from "./shared/components"

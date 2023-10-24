@@ -19,9 +19,8 @@ interface IFormData {
 
 const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
     nomeCompleto: yup.string().required().min(3),
-    email: yup.string().required().email(),
     cidadeId: yup.number().required(),
-
+    email: yup.string().required().email()
 })
 
 export const DetalheDePessoa: React.FC = () =>{
@@ -79,8 +78,8 @@ export const DetalheDePessoa: React.FC = () =>{
     
     const handleSave = (dados: IFormData) =>{
 
-        formValidationSchema.
-        validate(dados, {abortEarly: false})
+        formValidationSchema
+        .validate(dados, {abortEarly: false})
         .then((dadosValidados) => {
             if(id === 'nova'){
                 PessoasService.create(dadosValidados)
@@ -98,34 +97,34 @@ export const DetalheDePessoa: React.FC = () =>{
                         }
                     }
                 })
-            }else{
-                PessoasService.updateById(Number(id), {id: Number(id), ...dadosValidados})
-                .then((result) => {
-                    setIsLoading(false)
-    
-                    if(result instanceof Error){
-                        alert(result.message)
-                    } else{
-                        if(isSaveAndClose()){
-                            navigate('/pessoas')
-                            
-                        } 
-                    }
-                })
-            }
+                }else{
+                    PessoasService.updateById(Number(id), {id: Number(id), ...dadosValidados})
+                    .then((result) => {
+                        setIsLoading(false)
+        
+                        if(result instanceof Error){
+                            alert(result.message)
+                        } else{
+                            if(isSaveAndClose()){
+                                navigate('/pessoas')
+                                
+                            } 
+                        }
+                    })
+                }
         })
-        .catch((erros: yup.ValidationError) =>{
+        .catch((errors: yup.ValidationError) => {
             setIsLoading(false)
             const validationErrors: IVFormErrors = {};
 
-            erros.inner.forEach(error => {
+            errors.inner.forEach(error => {
                 if(!error.path) return;
 
                 validationErrors[error.path] = error.message;
             });
 
             formRef.current?.setErrors(validationErrors)
-        });
+        })
 
         setIsLoading(true); 
     }
