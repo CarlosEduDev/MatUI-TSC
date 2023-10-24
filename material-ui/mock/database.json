@@ -2,7 +2,7 @@
   "pessoas": [
     {
       "id": 1,
-      "nomeCompleto": "Maria Souza",
+      "nomeCompleto": "",
       "email": "MariaSouza@gmail.com",
       "cidadeId": "10"
     },
