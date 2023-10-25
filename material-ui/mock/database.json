@@ -66,5 +66,19 @@
       "cidadeId": "2",
       "id": 11
     }
+  ],
+  "cidades": [
+    {
+      "id": 1,
+      "nome": "João pessoa"
+    },
+    {
+      "nome": "Porto Velho",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "Rio Branco"
+    }
   ]
 }
