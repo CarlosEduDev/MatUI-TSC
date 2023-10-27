@@ -17,6 +17,12 @@
       "nomeCompleto": "Kally",
       "email": "Ka@gmail.com",
       "cidadeId": 6
+    },
+    {
+      "nomeCompleto": "Lucas",
+      "email": "LU@gmail.com",
+      "cidadeId": 7,
+      "id": 14
     }
   ],
   "cidades": [
@@ -48,5 +54,8 @@
       "nome": "Nova york",
       "id": 7
     }
-  ]
+  ],
+  "auth": {
+    "acessToken": "aaaaaaaaaaaaaa.bbbbbbbbb.cccccccc"
+  }
 }
