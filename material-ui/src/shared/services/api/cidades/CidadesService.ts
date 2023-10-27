@@ -14,14 +14,14 @@ export interface IDetalheCidades {
    
 }
 
-type ICidadesComTotalCount = {
+type TCidadesComTotalCount = {
    data: IListagemCidades[],
    totalCount: number,
 }
 
 
 
-const getAll = async( page= 1, filter = ''): Promise<ICidadesComTotalCount | Error> => {
+const getAll = async( page= 1, filter = ''): Promise<TCidadesComTotalCount | Error> => {
    try{
       const urlRelative = `/cidades?_page=${page}&_limit=${Enviroment.LIMITE_DE_LINHAS}&nome_like=${filter}`;
 

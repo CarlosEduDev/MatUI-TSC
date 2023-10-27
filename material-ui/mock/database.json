@@ -1,70 +1,22 @@
 {
   "pessoas": [
     {
-      "id": 1,
-      "nomeCompleto": "Maria Souza",
-      "email": "MariaSouza@gmail.com",
-      "cidadeId": 10
-    },
-    {
-      "id": 2,
-      "nomeCompleto": "Carlos Eduardo",
-      "email": "evangelista@gmail.com",
-      "cidadeId": "Porto Velho"
-    },
-    {
-      "id": 3,
-      "nomeCompleto": "Lucas Gomes",
-      "email": "Lucas@gmail.com",
-      "cidadeId": "5"
-    },
-    {
-      "id": 4,
-      "nomeCompleto": "Maria Silva",
-      "email": "MariaSilva@gmail.com",
-      "cidadeId": "10"
-    },
-    {
-      "id": 5,
-      "nomeCompleto": "Otavio Gomes",
-      "email": "evangelista@gmail.com",
-      "cidadeId": "Porto Velho"
-    },
-    {
-      "id": 6,
-      "nomeCompleto": "Natallia Silva",
-      "email": "Lucas@gmail.com",
-      "cidadeId": "5"
-    },
-    {
-      "id": 7,
-      "nomeCompleto": "Maria Conceição",
-      "email": "MariaSilva@gmail.com",
-      "cidadeId": "10"
-    },
-    {
-      "id": 8,
-      "nomeCompleto": "Viny Souza",
-      "email": "evangelista@gmail.com",
-      "cidadeId": "Porto Velho"
-    },
-    {
-      "id": 9,
-      "nomeCompleto": "Maria Gomes",
-      "email": "Lucas@gmail.com",
-      "cidadeId": "5"
-    },
-    {
-      "id": 10,
-      "nomeCompleto": "Ana Luiza",
-      "email": "Ana@gmail.com",
-      "cidadeId": "6"
-    },
-    {
+      "id": 11,
       "nomeCompleto": "Luiz jorge",
       "email": "Jorge@gmail.com",
-      "cidadeId": "2",
-      "id": 11
+      "cidadeId": 3
+    },
+    {
+      "id": 12,
+      "nomeCompleto": "Maria Souza",
+      "email": "Maria@gmail.com",
+      "cidadeId": 5
+    },
+    {
+      "id": 13,
+      "nomeCompleto": "Kally",
+      "email": "Ka@gmail.com",
+      "cidadeId": 6
     }
   ],
   "cidades": [
@@ -79,6 +31,18 @@
     {
       "id": 3,
       "nome": "Rio Branco"
+    },
+    {
+      "nome": "Copacabana",
+      "id": 4
+    },
+    {
+      "nome": "Toronto",
+      "id": 5
+    },
+    {
+      "nome": "Caxias",
+      "id": 6
     }
   ]
 }
