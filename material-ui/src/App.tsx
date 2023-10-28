@@ -6,14 +6,19 @@ import './shared/forms/TraducoesYup'
 
 // Routes
 import {AppRoutes} from './routes'
-import { MenuLateral } from "./shared/components"
+import { Login, MenuLateral } from "./shared/components"
+import { AuthProvider } from "./shared/contexts"
 
 
 function App() {
 
   
   return (
-    <AppThemeProvider>
+    <AuthProvider>
+     <AppThemeProvider>
+      
+      <Login>
+
       <DrawerProvider>
       <BrowserRouter>
 
@@ -23,9 +28,13 @@ function App() {
 
       </BrowserRouter>
       </DrawerProvider>
+      </Login>
+
       </AppThemeProvider>
       
 
+    
+    </AuthProvider>
     
     
   )

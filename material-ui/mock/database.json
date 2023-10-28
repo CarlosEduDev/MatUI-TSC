@@ -1,60 +1,6 @@
 {
-  "pessoas": [
-    {
-      "id": 11,
-      "nomeCompleto": "Luiz jorge",
-      "email": "Jorge@gmail.com",
-      "cidadeId": 3
-    },
-    {
-      "id": 12,
-      "nomeCompleto": "Maria Souza",
-      "email": "Maria@gmail.com",
-      "cidadeId": 5
-    },
-    {
-      "id": 13,
-      "nomeCompleto": "Kally",
-      "email": "Ka@gmail.com",
-      "cidadeId": 6
-    },
-    {
-      "nomeCompleto": "Lucas",
-      "email": "LU@gmail.com",
-      "cidadeId": 7,
-      "id": 14
-    }
-  ],
-  "cidades": [
-    {
-      "id": 1,
-      "nome": "João pessoa"
-    },
-    {
-      "nome": "Porto Velho",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "nome": "Rio Branco"
-    },
-    {
-      "nome": "Copacabana",
-      "id": 4
-    },
-    {
-      "nome": "Toronto",
-      "id": 5
-    },
-    {
-      "nome": "Caxias",
-      "id": 6
-    },
-    {
-      "nome": "Nova york",
-      "id": 7
-    }
-  ],
+  "pessoas": [],
+  "cidades": [],
   "auth": {
     "acessToken": "aaaaaaaaaaaaaa.bbbbbbbbb.cccccccc"
   }
