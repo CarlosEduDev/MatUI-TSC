@@ -1,6 +1,18 @@
 {
-  "pessoas": [],
-  "cidades": [],
+  "pessoas": [
+    {
+      "nomeCompleto": "Maria Souza",
+      "email": "Maria@gmail.com",
+      "cidadeId": 1,
+      "id": 1
+    }
+  ],
+  "cidades": [
+    {
+      "nome": "Porto Alegre",
+      "id": 1
+    }
+  ],
   "auth": {
     "acessToken": "aaaaaaaaaaaaaa.bbbbbbbbb.cccccccc"
   }
